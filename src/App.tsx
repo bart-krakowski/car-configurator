@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 import { Canvas } from 'react-three-fiber'
 import 'index.css'
-import { ContactShadows, Environment, OrbitControls } from 'drei'
+import { Environment, OrbitControls } from 'drei'
 
 import Car from 'components/Car'
 import Lights from 'components/Lights'
