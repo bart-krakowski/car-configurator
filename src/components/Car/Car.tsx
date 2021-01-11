@@ -1,8 +1,7 @@
-import { FC, memo, useContext, useEffect, useRef, useState, Dispatch, SetStateAction } from 'react'
+import { FC, memo, useEffect, useRef, Dispatch, SetStateAction } from 'react'
 import { GroupProps, useLoader } from 'react-three-fiber'
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { Mesh, MeshStandardMaterial, Group, Material, Color } from 'three'
-import ColorContext from 'contexts/ColorContext'
+import { Mesh, MeshStandardMaterial, Group, Color } from 'three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -218,7 +217,6 @@ const Car: FC<GroupProps & CarProps> = memo(({ color, setColor }) => {
   const group = useRef<Group>(null)
   // const { color, setColor } = useContext(ColorContext)
 
-  const [isHovered, setIsHovered] = useState<Material | null>(null)
   const currentElementRef = useRef<Mesh<any, MeshStandardMaterial> | null>(null)
 
   // useEffect(() => {
