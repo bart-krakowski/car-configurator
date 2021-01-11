@@ -1,30 +1,20 @@
-import { Dispatch, FC, SetStateAction, useContext, useEffect } from 'react'
+import { Dispatch, FC, SetStateAction } from 'react'
 import { HexColorPicker } from 'react-colorful'
 import 'react-colorful/dist/index.css'
 import styled from 'styled-components'
-
-import ColorContext from 'contexts/ColorContext'
 
 interface ColorPickerProps {
   color: string
   setColor: Dispatch<SetStateAction<string>>
 }
-const ColorPicker: FC<ColorPickerProps> = ({ color, setColor}) => {
-  // const { color, setColor } = useContext(ColorContext)
-
-  useEffect(() => {
-    console.log('color', color)
-  }, [color])
-
-  return (
-    <Wrapper>
-      <StyledHexColorPicker
-        color={color}
-        onChange={(color) => setColor?.(color)}
-      />
-    </Wrapper>
-  )
-}
+const ColorPicker: FC<ColorPickerProps> = ({ color, setColor }) => (
+  <Wrapper>
+    <StyledHexColorPicker
+      color={color}
+      onChange={(color) => setColor?.(color)}
+    />
+  </Wrapper>
+)
 
 const Wrapper = styled.div`
   display: block;
